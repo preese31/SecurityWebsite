@@ -1,0 +1,1 @@
+-Website for my different endeavors and interest in static HTML format
