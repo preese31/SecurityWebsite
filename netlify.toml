@@ -1,0 +1,8 @@
+# Netlify Configuration
+
+[build]
+  publish = "."
+
+# Form notifications are configured in the Netlify UI:
+# Site settings > Forms > Form notifications > Add notification > Email notification
+# Configure to send to: phillipreese258@gmail.com
