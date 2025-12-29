@@ -638,7 +638,6 @@
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#resources">Resources</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#contact" class="cta-btn">Book Discovery Call</a></li>
             </ul>
@@ -655,7 +654,7 @@
                     <p class="trust-line">Specialized Security for Enterprises, Startups, and High-Risk Environments</p>
                     <div class="hero-ctas">
                         <a href="#contact" class="cta-btn">Book Discovery Call</a>
-                        <button class="cta-btn cta-btn-secondary" onclick="openModal()">Download OPSEC Checklist 2025</button>
+                        <button class="cta-btn cta-btn-secondary" onclick="openModal()">Get Free 2026 OPSEC Guide</button>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -773,79 +772,6 @@
         </div>
     </section>
 
-    <!-- Resources Section -->
-    <section id="resources">
-        <div class="container">
-            <div class="section-header">
-                <h2>// RESOURCES & DIGITAL PRODUCTS</h2>
-                <p>Tools, guides, and content for the security-conscious professional</p>
-            </div>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <h4>Security Tools</h4>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem;">Custom scripts & utilities</p>
-                    <ul>
-                        <li>Port Scanner Pro</li>
-                        <li>Hash Cracker Suite</li>
-                        <li>Network Analyzer</li>
-                        <li>Encryption Toolkit</li>
-                    </ul>
-                </div>
-
-                <div class="resource-card">
-                    <h4>Documentation</h4>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem;">Guides & whitepapers</p>
-                    <ul>
-                        <li>OPSEC Guide 2025</li>
-                        <li>Web3 Security Bible</li>
-                        <li>Privacy Handbook</li>
-                        <li>Penetration Testing 101</li>
-                    </ul>
-                </div>
-
-                <div class="resource-card">
-                    <h4>Code Templates</h4>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem;">Boilerplates & frameworks</p>
-                    <ul>
-                        <li>Secure API Template</li>
-                        <li>Blockchain Starter</li>
-                        <li>Zero-Knowledge Auth</li>
-                        <li>Encrypted Chat System</li>
-                    </ul>
-                </div>
-
-                <div class="resource-card">
-                    <h4>Research Papers</h4>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem;">Deep dives & analysis</p>
-                    <ul>
-                        <li>Dark Web Economics</li>
-                        <li>AI in Cybersecurity</li>
-                        <li>Quantum Threats</li>
-                        <li>Social Engineering</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- External Links -->
-            <div style="margin-top: 4rem;">
-                <h3 style="font-family: 'JetBrains Mono', monospace; color: var(--accent-blue); text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">Content & Learning</h3>
-                <div class="links-grid">
-                    <a href="https://youtube.com/@maker00-r1" target="_blank" rel="noopener noreferrer" class="link-card">
-                        <div class="link-type">VIDEO</div>
-                        <h3>YouTube Channel</h3>
-                        <p>Tutorials, project walkthroughs, and deep dives into hardware hacking, security research, and custom device creation. Subscribe for regular content updates.</p>
-                    </a>
-
-                    <a href="https://phillipreese.substack.com" target="_blank" rel="noopener noreferrer" class="link-card">
-                        <div class="link-type">WRITING</div>
-                        <h3>Substack Newsletter</h3>
-                        <p>In-depth articles, research findings, and technical analysis delivered directly to your inbox. Subscribe for exclusive content and industry insights.</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -854,7 +780,11 @@
                 <p>Ready to collaborate? Let's discuss your security needs</p>
             </div>
             <div class="contact-container">
-                <form id="contact-form">
+                <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="contact">
+                    <p style="display: none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                    </p>
                     <div class="form-group">
                         <label for="name">Name *</label>
                         <input type="text" id="name" name="name" required>
@@ -935,18 +865,23 @@
         </div>
     </footer>
 
-    <!-- Lead Magnet Modal -->
+    <!-- Lead Magnet Modal - Newsletter Subscription Popup -->
     <div id="leadModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">×</button>
-            <h3>Download OPSEC Checklist 2025</h3>
-            <p>Get your free comprehensive OPSEC guide. Enter your email below:</p>
-            <form id="lead-form">
+            <h3>Get Your Free 2026 OPSEC Guide</h3>
+            <p>Subscribe to our newsletter and receive the comprehensive 2026 OPSEC Guide - your complete roadmap to operational security in the modern threat landscape.</p>
+            <form id="lead-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="newsletter">
+                <p style="display: none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                </p>
                 <div class="form-group">
                     <label for="lead-email">Email Address *</label>
-                    <input type="email" id="lead-email" name="email" required>
+                    <input type="email" id="lead-email" name="email" required placeholder="Enter your email">
                 </div>
-                <button type="submit" class="cta-btn" style="width: 100%;">Download Now</button>
+                <button type="submit" class="cta-btn" style="width: 100%;">Subscribe & Download</button>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 1rem; text-align: center;">No spam. Unsubscribe anytime.</p>
             </form>
         </div>
     </div>
@@ -1005,30 +940,23 @@
             }
         });
 
-        // Lead Form Submission
-        document.getElementById('lead-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('lead-email').value;
-            
-            // Replace this with your actual form handling (Netlify Forms, Formspree, etc.)
-            alert(`Thank you! Download link sent to ${email}`);
-            closeModal();
-            document.getElementById('lead-form').reset();
-        });
+        // Lead Form Submission - Newsletter form with Netlify Forms
+        // Check if user has already seen the popup (using localStorage)
+        const hasSeenPopup = localStorage.getItem('newsletterPopupShown');
 
-        // Contact Form Submission
-        document.getElementById('contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData);
-            
-            // Replace this with your actual form handling
-            // For Netlify Forms, add: data-netlify="true" to the form tag
-            alert('Message sent! We will respond within 24-48 hours.');
-            e.target.reset();
-        });
+        // Auto-show popup after 5 seconds if user hasn't seen it
+        if (!hasSeenPopup) {
+            setTimeout(() => {
+                openModal();
+                localStorage.setItem('newsletterPopupShown', 'true');
+            }, 5000);
+        }
+
+        // Newsletter form handles submission via Netlify Forms natively
+        // No JavaScript needed - form will submit and redirect to default success page
+
+        // Contact Form Submission - Netlify Forms handles submission natively
+        // Form will submit to Netlify and send email notification
 
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
